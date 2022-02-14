@@ -15,9 +15,9 @@
 
     // === logo change
     if (ud_header.classList.contains("sticky")) {
-      logo.src = "assets/icons/iOS/Icon-60.png";
+      logo.src = "/assets/icons/iOS/Icon-180.png";
     } else {
-      logo.src = "assets/icons/iOS/Icon-60.png";
+      logo.src = "/assets/icons/iOS/Icon-180.png";
     }
 
     // show or hide the back-top-top button
