@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZ6YBMPS54"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PZ6YBMPS54');
+    </script>
+
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const id = urlParams.get('id')
+        console.log(id);
+
+        async function getBuild() {
+            let response = await fetch(
+                "http://123.56.237.233:1337/api/dbuilds/" + id
+            );
+            let data = await response.json();
+
+
+            var targetDiv = document.getElementById('charactername');
+            var dataray = JSON.parse(data);
+            targetDiv.innerHTML = dataray['data']['attributes']['character'];
+
+            return data;
+        }
+        getBuild().then(data => console.log(data));
+
+
+    </script>
+
+    <title>原神伤害可视化计算器</title>
+
+
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/icons/favicon-32x32.png" />
+
+    <!-- ===== All CSS files ===== -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" />
+    <link rel="stylesheet" href="assets/css/ud-styles.css" />
+</head>
+
+<body>
+    <!-- ====== Header Start ====== -->
+    <header class="ud-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/icons/iOS/Icon-180.png" width="60px" alt="Logo" />
+                        </a>
+                        <button class="navbar-toggler">
+                            <span class="toggler-icon"> </span>
+                            <span class="toggler-icon"> </span>
+                            <span class="toggler-icon"> </span>
+                        </button>
+
+                        <div class="navbar-collapse">
+
+                        </div>
+
+                        <div class="navbar-btn d-none d-sm-inline-block">
+
+                            <a class="ud-main-btn ud-white-btn" href="javascript:void(0)">
+                                中文
+                            </a>
+                            <a href="en/index.html" class="ud-main-btn ud-login-btn">
+                                English
+                            </a>
+                            <a href="jp/index.html" class="ud-main-btn ud-login-btn">
+                                日本語
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====== Header End ====== -->
+
+    <!-- ====== Hero Start ====== -->
+    <section class="ud-hero" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
+                        <h1 class="ud-hero-title">
+                            原神伤害可视化计算器
+                        </h1>
+                        <p class="ud-hero-desc">
+                            如下是你分享的人物面板，请在计算器中导入查看
+                        </p>
+
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="ud-contact-form-wrapper wow fadeInUp" data-wow-delay=".2s">
+                                <h3 class="ud-contact-form-title">Send us a Message</h3>
+                                <form class="ud-contact-form">
+                                    <div class="ud-form-group">
+                                        <label for="fullName">角色名</label>
+                                        <h3 id="charactername"></h3>
+                                    </div>
+
+                                    <div class="ud-form-group">
+                                        <label for="message">Message*</label>
+                                        <textarea name="message" rows="1"
+                                            placeholder="type your message here"></textarea>
+                                    </div>
+                                    <div class="ud-form-group mb-0">
+                                        <button type="submit" class="ud-main-btn">
+                                            Send Message
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                            <ul class="ud-hero-buttons">
+                                <li>
+                                    <a href="https://genshin.yunlu18.net/#/" rel="nofollow noopener" target="_blank"
+                                        class="ud-main-btn ud-white-btn"><i class="lni lni-chrome"></i>
+                                        Web版国际
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://genshincn.kclu.net/#/" rel="nofollow noopener" target="_blank"
+                                        class="ud-main-btn ud-white-btn"><i class="lni lni-chrome"></i>
+                                        Web版中国
+                                    </a>
+                                </li>
+
+                                <li class="d-none">
+                                    <a href="https://github.com/never1andwxy/GenshinImpactDMGvisualizer_WEB"
+                                        rel="nofollow noopener" target="_blank" class="ud-main-btn ud-link-btn">
+                                        了解更多 <i class="lni lni-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="ud-hero-buttons">
+
+                                <li>
+                                    <a href="/Download/genshin Impact DMG Visualizer 1.0.apk" rel="nofollow noopener"
+                                        target="_blank" class="ud-main-btn ud-white-btn"><i
+                                            class="lni lni-android-original"></i>
+                                        安卓版(点击下载)
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <ul class="ud-hero-buttons">
+
+                                <li>
+                                    <a href="/Download/genshinimpactdmgvisualizer1.0.zip" rel="nofollow noopener"
+                                        target="_blank" class="ud-main-btn ud-white-btn"><i class="lni lni-windows"></i>
+                                        Windows版(点击下载)
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
+                            <img src="assets/images/hero/banner.jpg" alt="hero-image" />
+                            <img src="assets/images/hero/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                            <img src="assets/images/hero/dotted-shape.svg" alt="shape" class="shape shape-2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- ====== Hero End ====== -->
+
+    <!-- ====== Features Start ====== -->
+    <section id="features" class="ud-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-section-title">
+                        <span>Features</span>
+                        <h2>主要功能</h2>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".1s">
+                        <div class="ud-feature-icon">
+                            <i class="lni lni-bar-chart"></i>
+                        </div>
+                        <div class="ud-feature-content">
+                            <h3 class="ud-feature-title">动态柱状图显示伤害</h3>
+                            <p class="ud-feature-desc">
+                                暴击，非暴击，期待值伤害随面板动态变化，一目了然
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
+                        <div class="ud-feature-icon">
+                            <i class="lni lni-radio-button"></i>
+                        </div>
+                        <div class="ud-feature-content">
+                            <h3 class="ud-feature-title">轻松滑动 一键切换</h3>
+                            <p class="ud-feature-desc">
+                                滑动和切换按钮来切换人物面板，增益属性
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".2s">
+                        <div class="ud-feature-icon">
+                            <i class="lni lni-layout"></i>
+                        </div>
+                        <div class="ud-feature-content">
+                            <h3 class="ud-feature-title">多平台多设备对应</h3>
+                            <p class="ud-feature-desc">
+                                从桌面到手机，从安卓到Windows到网页端都可以放心使用
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
+                        <div class="ud-feature-icon">
+                            <i class="lni lni-share"></i>
+                        </div>
+                        <div class="ud-feature-content">
+                            <h3 class="ud-feature-title">支持导入导出</h3>
+                            <p class="ud-feature-desc">
+                                可以导入导出自己的面板，以便以后再次查询，也可以把自己面板分享给其他玩家
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== Features End ====== -->
+
+    <!-- ====== About Start ====== -->
+    <section id="about" class="ud-about">
+        <div class="container">
+            <div class="ud-about-wrapper wow fadeInUp" data-wow-delay=".2s">
+                <div class="ud-about-content-wrapper">
+                    <div class="ud-about-content">
+                        <span class="tag">说明书</span>
+                        <h2>如何使用原神伤害可视化计算器</h2>
+                        <ol style="list-style: decimal inside;">
+                            <li>在角色页面输入角色属性</li>
+                            <li>在武器/圣遗物界面输入武器属性</li>
+                            <li>在武器/圣遗物界面输入圣遗物属性</li>
+                            <li><strong>在面板和设置界面中去点击激活/无效化选项（角色，圣遗物套装，其他buff）（√代表已经激活）（很多人忘了这一步）</strong></li>
+                            <li>在面板和设置界面去输入其他手动buff</li>
+                            <li>在面板和设置界面去选择敌人类型</li>
+                            <li>在面板和设置界面去选择敌人等级和减防buff</li>
+                            <li>在伤害界面点击打开下拉菜单可以看到对应反应伤害</li>
+                            <li>如果伤害条/属性条超过了页面宽度，拖动右下角伤害标尺/状态标尺</li>
+                            <li>左上角系统菜单可以更换语言</li>
+                            <li><span class="has-inline-color has-vivid-red-color">左上角菜单可以切换角色</span></li>
+                            <li>导出数据按钮，可以把当前面板生成一个txt保存起来。需要再次使用的时候点击导入数据按钮，选择刚刚导出的txt文件</li>
+                            <li>右下角的按钮可以查看当前人物的面板分析</li>
+                        </ol>
+
+                    </div>
+                </div>
+                <div class="ud-about-image">
+                    <img src="assets/images/raiden.jpg" alt="about-image" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== About End ====== -->
+
+    <!-- ====== Pricing Start ====== -->
+    <section id="pricing" class="ud-pricing">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-section-title mx-auto text-center">
+                        <span>Contents</span>
+                        <h2>实装内容</h2>
+                        <p>
+                            我们会努力完善和增加更多角色，武器和圣遗物，和快捷BUFF选项。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-0 align-items-center justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <div class="ud-single-pricing first-item wow fadeInUp" data-wow-delay=".15s">
+                        <div class="ud-pricing-header">
+                            <h3>Weapon</h3>
+                            <h4>武器</h4>
+                        </div>
+                        <div class="ud-pricing-body">
+                            <ul>
+                                <li>护摩之杖</li>
+                                <li>螭骨剑</li>
+                                <li>薙草之稻光</li>
+                                <li>磐岩结绿</li>
+                                <li>飞雷之弦振</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <div class="ud-single-pricing active wow fadeInUp" data-wow-delay=".1s">
+                        <span class="ud-popular-tag">已实装</span>
+                        <div class="ud-pricing-header">
+                            <h3>Character</h3>
+                            <h4>角色</h4>
+                        </div>
+                        <div class="ud-pricing-body">
+                            <ul>
+                                <li>甘雨</li>
+                                <li>雷电将军</li>
+                                <li>胡桃</li>
+                                <li>钟离</li>
+                                <li>宵宫</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <div class="ud-single-pricing last-item wow fadeInUp" data-wow-delay=".15s">
+                        <div class="ud-pricing-header">
+                            <h3>Artifacts & buffs</h3>
+                            <h4>圣遗物和快捷BUFF</h4>
+                        </div>
+                        <div class="ud-pricing-body">
+                            <ul>
+                                <li>追忆之注连</li>
+                                <li>华馆梦醒形骸记</li>
+                                <li>可选BUFF选项（雷神战技）</li>
+                                <li>可选BUFF选项（申鹤）</li>
+                                <li>可选BUFF选项（云堇）</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== Pricing End ====== -->
+
+    <!-- ====== FAQ Start ====== -->
+    <section id="faq" class="ud-faq">
+        <div class="shape">
+            <img src="assets/images/faq/shape.svg" alt="shape" />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-section-title text-center mx-auto">
+                        <span>FAQ</span>
+                        <h2>这里回答常见的问题</h2>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ud-single-faq wow fadeInUp" data-wow-delay=".1s">
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>本软件的运行环境是什么？</span>
+                            </button>
+                            <div id="collapseOne" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    各类浏览器，Windows程序，Android
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ud-single-faq wow fadeInUp" data-wow-delay=".15s">
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>我的面板数值与计算器数值有差异是为什么？</span>
+                            </button>
+                            <div id="collapseTwo" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    <ul>
+                                        <li>人物的圣遗物内部的精度其实比显示出来的多 , (圣遗物面板: 9.3% 攻击力 , 实际内部计算: 9.34542% 攻击力)
+                                            会导致最终会有个位数到十位数的差异。不过这些差异不会影响你的最终装备决策。</li>
+                                        <li>一些buff并不会显示在你的人物详细面板。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ud-single-faq wow fadeInUp" data-wow-delay=".2s">
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>我的最终伤害与计算器数值有差异是为什么？</span>
+                            </button>
+                            <div id="collapseThree" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    <ul>
+                                        <li>可能有以下原因：<ul>
+                                                <li>原神内部的数字精度很高，而我们只拿到了比较低精度的基础数值和公式.</li>
+                                                <li>一些环境伤害和增益并不会在计算中计算.</li>
+                                                <li>一些你没有想到的但是实际已经触发的增益</li>
+                                                <li>可能是BUG，请报告给我们 (但是请报告前看完所有 Q&amp;A)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ud-single-faq wow fadeInUp" data-wow-delay=".2s">
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>为什么我可以输入不存在的圣遗物属性?</span>
+                            </button>
+                            <div id="collapseSeven" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    这个软件不是原神，所以也没加入可行性判断, 输入你的属性得到你的伤害就行了。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ud-single-faq wow fadeInUp" data-wow-delay=".1s">
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>面板是什么意思？</span>
+                            </button>
+                            <div id="collapseFour" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    每个面板是对于你最终伤害的一个独立计算乘区. 如果你能把增益有效的平摊到各个面板内就能获得更高伤害.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ud-single-faq wow fadeInUp" data-wow-delay=".15s">
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>为什么属性伤害加成和人物详细面板里面不一样？</span>
+                            </button>
+                            <div id="collapseFive" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    人物详细面板里面不会显示所有属性伤害加成
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ud-single-faq wow fadeInUp" data-wow-delay=".2s">
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>角色页的命之座滑块有什么用？</span>
+                            </button>
+                            <div id="collapseSix" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    仅用作为展示目的。请在面板和设置界面选择对应命之座的加成设置。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ud-single-faq wow fadeInUp" data-wow-delay=".2s">
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEight">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>超导: (100%) 是什么意思?</span>
+                            </button>
+                            <div id="collapseEight" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    我们把没有任何buff的超导伤害设定为 100% 来让大家更加直观的了解剧变反应伤害。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- ====== FAQ End ====== -->
+
+    <!-- ====== Testimonials Start ====== -->
+    <section id="testimonials" class="ud-testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-section-title mx-auto text-center">
+                        <span>Special</span>
+                        <h2>面板分析</h2>
+                        <p>
+                            可以看到当前面板的伤害获得一定增益之后的稀释情况。黑字提供辅助的提示，对应元素颜色字提供圣遗物的刷取方向。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="ud-single-testimonial wow fadeInUp" data-wow-delay=".1s">
+
+                        <img src="assets/images/hutaostat.jpg" alt="hutao" />
+                        <div class="ud-testimonial-content">
+                            <p>
+                                “有时候精通还是蛮重要的
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="ud-single-testimonial wow fadeInUp" data-wow-delay=".1s">
+
+                        <img src="assets/images/xiaostat.jpg" alt="hutao" />
+                        <div class="ud-testimonial-content">
+                            <p>
+                                “风系高贵的减抗
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ====== Testimonials End ====== -->
+
+    <!-- ====== Team Start ====== -->
+    <section id="team" class="ud-team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-section-title mx-auto text-center">
+                        <span>Disclaimer</span>
+                        <h2>免责声明</h2>
+                        <p>
+                            这个项目是爱好原神的玩家们的个人项目，也欢迎在带有本页面链接的前提下分享，再开发这个项目。如果有什么问题，请联系我们。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- ====== Team End ====== -->
+
+    <!-- ====== Contact Start ====== -->
+    <section id="contact" class="ud-contact">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="ud-contact-content-wrapper">
+                        <div class="ud-contact-title">
+                            <span>Contact us</span>
+                            <h2>
+                                联系我们
+
+                            </h2>
+                        </div>
+                        <div class="ud-contact-info-wrapper">
+                            <div class="ud-single-info">
+                                <div class="ud-info-icon">
+                                    <i class="lni lni-website"></i>
+                                </div>
+                                <div class="ud-info-meta">
+                                    <h5>Home Website</h5>
+                                    <a href="https://yunlu18.net/" rel="nofollow" target="_blank">Yunlu18.net</a>
+
+                                </div>
+                            </div>
+                            <div class="ud-single-info">
+                                <div class="ud-info-icon">
+                                    <i class="lni lni-bold"></i>
+                                </div>
+                                <div class="ud-info-meta">
+                                    <h5>Bilibili</h5>
+                                    <a href="https://space.bilibili.com/118842" rel="nofollow"
+                                        target="_blank">久远寺·有珠</a>
+                                </div>
+                            </div>
+
+                            <div class="ud-single-info">
+                                <div class="ud-info-icon">
+                                    <i class="lni lni-github-original"></i>
+                                </div>
+                                <div class="ud-info-meta">
+                                    <h5>Github</h5>
+                                    <a href="https://github.com/never1andwxy/GenshinImpactDMGvisualizer_WEB"
+                                        rel="nofollow" target="_blank">GenshinImpactDMGvisualizer_WEB</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5 d-none">
+                    <div class="ud-contact-form-wrapper wow fadeInUp" data-wow-delay=".2s">
+                        <h3 class="ud-contact-form-title">Send us a Message</h3>
+                        <form class="ud-contact-form">
+                            <div class="ud-form-group">
+                                <label for="fullName">Full Name*</label>
+                                <input type="text" name="fullName" placeholder="wangxiaomei" />
+                            </div>
+                            <div class="ud-form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" name="email" placeholder="example@yourmail.com" />
+                            </div>
+                            <div class="ud-form-group">
+                                <label for="phone">Phone*</label>
+                                <input type="text" name="phone" placeholder="+885 1254 5211 552" />
+                            </div>
+                            <div class="ud-form-group">
+                                <label for="message">Message*</label>
+                                <textarea name="message" rows="1" placeholder="type your message here"></textarea>
+                            </div>
+                            <div class="ud-form-group mb-0">
+                                <button type="submit" class="ud-main-btn">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== Contact End ====== -->
+
+    <!-- ====== Footer Start ====== -->
+    <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
+        <div class="shape shape-1">
+            <img src="assets/images/footer/shape-1.svg" alt="shape" />
+        </div>
+        <div class="shape shape-2">
+            <img src="assets/images/footer/shape-2.svg" alt="shape" />
+        </div>
+        <div class="shape shape-3">
+            <img src="assets/images/footer/shape-3.svg" alt="shape" />
+        </div>
+        <div class="d-none ud-footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="ud-widget">
+                            <a href="index.html" class="ud-footer-logo">
+                                <img src="assets/images/logo/logo.svg" alt="logo" />
+                            </a>
+                            <p class="ud-widget-desc">
+                                We create digital experiences for brands and companies by
+                                using technology.
+                            </p>
+                            <ul class="ud-widget-socials">
+                                <li>
+                                    <a href="https://twitter.com/MusharofChy">
+                                        <i class="lni lni-facebook-filled"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/MusharofChy">
+                                        <i class="lni lni-twitter-filled"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/MusharofChy">
+                                        <i class="lni lni-instagram-filled"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/MusharofChy">
+                                        <i class="lni lni-linkedin-original"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                        <div class="ud-widget">
+                            <h5 class="ud-widget-title">About Us</h5>
+                            <ul class="ud-widget-links">
+                                <li>
+                                    <a href="javascript:void(0)">Home</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Features</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">About</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Testimonial</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
+                        <div class="ud-widget">
+                            <h5 class="ud-widget-title">Features</h5>
+                            <ul class="ud-widget-links">
+                                <li>
+                                    <a href="javascript:void(0)">How it works</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Privacy policy</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Terms of service</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Refund policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
+                        <div class="ud-widget">
+                            <h5 class="ud-widget-title">Our Products</h5>
+                            <ul class="ud-widget-links">
+                                <li>
+                                    <a href="https://lineicons.com/" rel="nofollow noopner" target="_blank">Lineicons
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://ecommercehtml.com/" rel="nofollow noopner"
+                                        target="_blank">Ecommerce HTML</a>
+                                </li>
+                                <li>
+                                    <a href="https://ayroui.com/" rel="nofollow noopner" target="_blank">Ayro UI</a>
+                                </li>
+                                <li>
+                                    <a href="https://graygrids.com/" rel="nofollow noopner" target="_blank">Plain
+                                        Admin</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-8 col-sm-10">
+                        <div class="ud-widget">
+                            <h5 class="ud-widget-title">Partners</h5>
+                            <ul class="ud-widget-brands">
+                                <li>
+                                    <a href="https://ayroui.com/" rel="nofollow noopner" target="_blank">
+                                        <img src="assets/images/footer/brands/ayroui.svg" alt="ayroui" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://ecommercehtml.com/" rel="nofollow noopner" target="_blank">
+                                        <img src="assets/images/footer/brands/ecommerce-html.svg"
+                                            alt="ecommerce-html" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://graygrids.com/" rel="nofollow noopner" target="_blank">
+                                        <img src="assets/images/footer/brands/graygrids.svg" alt="graygrids" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://lineicons.com/" rel="nofollow noopner" target="_blank">
+                                        <img src="assets/images/footer/brands/lineicons.svg" alt="lineicons" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://uideck.com/" rel="nofollow noopner" target="_blank">
+                                        <img src="assets/images/footer/brands/uideck.svg" alt="uideck" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://tailwindtemplates.co/" rel="nofollow noopner" target="_blank">
+                                        <img src="assets/images/footer/brands/tailwindtemplates.svg"
+                                            alt="tailwindtemplates" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ud-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="ud-footer-bottom-left  d-none">
+                            <li>
+                                <a href="javascript:void(0)">Privacy policy</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Support policy</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Terms of service</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="ud-footer-bottom-right">
+                            Designed and Developed by
+                            <a href="https://yunlu18.net" rel="nofollow">Yunlu18.net</a>
+                        </p>
+                        <p class="ud-footer-bottom-right">
+                            Special thanks to
+                            <a href="https://uideck.com/" rel="nofollow">UIdeck</a>
+                            <a href="https://lineicons.com/" rel="nofollow">lineicons</a>
+                            <a href="https://genshin.honeyhunterworld.com/" rel="nofollow">honeyhunterworld</a>
+                        </p>
+                        <p class="ud-footer-bottom-right">
+                            This tool is not affiliated with miHoYo.
+                            Genshin Impact, game content and materials are trademarks and copyrights of miHoYo.
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ====== Footer End ====== -->
+
+    <!-- ====== Back To Top Start ====== -->
+    <a href="javascript:void(0)" class="back-to-top">
+        <i class="lni lni-chevron-up"> </i>
+    </a>
+    <!-- ====== Back To Top End ====== -->
+
+    <!-- ====== All Javascript Files ====== -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // ==== for menu scroll
+        const pageLink = document.querySelectorAll(".ud-menu-scroll");
+
+        pageLink.forEach((elem) => {
+            elem.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(elem.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth",
+                    offsetTop: 1 - 60,
+                });
+            });
+        });
+
+        // section menu active
+        function onScroll(event) {
+            const sections = document.querySelectorAll(".ud-menu-scroll");
+            const scrollPos =
+                window.pageYOffset ||
+                document.documentElement.scrollTop ||
+                document.body.scrollTop;
+
+            for (let i = 0; i < sections.length; i++) {
+                const currLink = sections[i];
+                const val = currLink.getAttribute("href");
+                const refElement = document.querySelector(val);
+                const scrollTopMinus = scrollPos + 73;
+                if (
+                    refElement.offsetTop <= scrollTopMinus &&
+                    refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+                ) {
+                    document
+                        .querySelector(".ud-menu-scroll")
+                        .classList.remove("active");
+                    currLink.classList.add("active");
+                } else {
+                    currLink.classList.remove("active");
+                }
+            }
+        }
+
+        window.document.addEventListener("scroll", onScroll);
+    </script>
+</body>
+
+</html>
