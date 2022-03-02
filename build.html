@@ -16,6 +16,7 @@
     </script>
 
     <script>
+
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const id = urlParams.get('id')
@@ -27,14 +28,25 @@
             );
             let data = await response.json();
 
+            console.log(data)
 
             var targetDiv = document.getElementById('charactername');
-            var dataray = JSON.parse(data);
-            targetDiv.innerHTML = dataray['data']['attributes']['character'];
+            targetDiv.innerHTML = data['data']['attributes']['character'];
+
+            targetDiv = document.getElementById('buildinfo');
+            targetDiv.innerHTML = data['data']['attributes']['buildinfo'];
 
             return data;
         }
         getBuild().then(data => console.log(data));
+
+        function copyBuildButton(){
+            var targetInput = document.getElementById('buildinfo');
+            targetInput.select();
+            // 执行复制
+            document.execCommand('copy', true);
+            alert("已复制到剪贴板")
+        }
 
 
     </script>
@@ -115,13 +127,12 @@
                                     </div>
 
                                     <div class="ud-form-group">
-                                        <label for="message">Message*</label>
-                                        <textarea name="message" rows="1"
-                                            placeholder="type your message here"></textarea>
+                                        <label for="buildinfo">Message*</label>
+                                        <textarea name="message" id="buildinfo" rows="1"></textarea>
                                     </div>
                                     <div class="ud-form-group mb-0">
-                                        <button type="submit" class="ud-main-btn">
-                                            Send Message
+                                        <button type="button" id="copybuild" class="ud-main-btn" onclick="copyBuildButton()">
+                                            复制
                                         </button>
                                     </div>
                                 </form>
