@@ -30,8 +30,8 @@
 
             console.log(data)
 
-            var targetDiv = document.getElementById('charactername');
-            targetDiv.innerHTML = data['data']['attributes']['character'];
+            var iconimage = document.getElementById('charactericon');
+            iconimage.src = "/assets/images/charactericon/" + data['data']['attributes']['character'] + ".png";
 
             targetDiv = document.getElementById('buildinfo');
             targetDiv.innerHTML = data['data']['attributes']['buildinfo'];
@@ -40,12 +40,13 @@
         }
         getBuild().then(data => console.log(data));
 
-        function copyBuildButton(){
+        function copyBuildButton() {
             var targetInput = document.getElementById('buildinfo');
             targetInput.select();
             // 执行复制
             document.execCommand('copy', true);
             alert("已复制到剪贴板")
+
         }
 
 
@@ -82,6 +83,12 @@
                         </button>
 
                         <div class="navbar-collapse">
+                            <ul id="nav" class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="/index.html">回到首页</a>
+                                </li>
+                            </ul>
+
 
                         </div>
 
@@ -104,6 +111,8 @@
     </header>
     <!-- ====== Header End ====== -->
 
+
+
     <!-- ====== Hero Start ====== -->
     <section class="ud-hero" id="home">
         <div class="container">
@@ -114,83 +123,86 @@
                             原神伤害可视化计算器
                         </h1>
                         <p class="ud-hero-desc">
-                            如下是你分享的人物面板，请在计算器中导入查看
+                            请在计算器中导入查看已分享的角色面板
                         </p>
 
                         <div class="col-xl-12 col-lg-12">
                             <div class="ud-contact-form-wrapper wow fadeInUp" data-wow-delay=".2s">
-                                <h3 class="ud-contact-form-title">Send us a Message</h3>
+                                <h3 class="ud-contact-form-title">角色面板</h3>
                                 <form class="ud-contact-form">
-                                    <div class="ud-form-group">
-                                        <label for="fullName">角色名</label>
-                                        <h3 id="charactername"></h3>
+                                    <div class="ud-form-group d-flex justify-content-center">
+
+                                        <img id="charactericon" src="/assets/images/charactericon/ayaka.png"
+                                            alt="charactericon" width="150">
+
                                     </div>
 
                                     <div class="ud-form-group">
-                                        <label for="buildinfo">Message*</label>
-                                        <textarea name="message" id="buildinfo" rows="1"></textarea>
+                                        <label for="buildinfo">面板代码</label>
+                                        <textarea name="message" id="buildinfo" rows="2"></textarea>
                                     </div>
-                                    <div class="ud-form-group mb-0">
-                                        <button type="button" id="copybuild" class="ud-main-btn" onclick="copyBuildButton()">
+                                    <div class="ud-form-group mb-0 d-flex justify-content-center">
+                                        <button type="button" id="copybuild" class="ud-main-btn"
+                                            onclick="copyBuildButton()">
                                             复制
                                         </button>
                                     </div>
                                 </form>
                             </div>
-
-
-                            <ul class="ud-hero-buttons">
-                                <li>
-                                    <a href="https://genshin.yunlu18.net/#/" rel="nofollow noopener" target="_blank"
-                                        class="ud-main-btn ud-white-btn"><i class="lni lni-chrome"></i>
-                                        Web版国际
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://genshincn.kclu.net/#/" rel="nofollow noopener" target="_blank"
-                                        class="ud-main-btn ud-white-btn"><i class="lni lni-chrome"></i>
-                                        Web版中国
-                                    </a>
-                                </li>
-
-                                <li class="d-none">
-                                    <a href="https://github.com/never1andwxy/GenshinImpactDMGvisualizer_WEB"
-                                        rel="nofollow noopener" target="_blank" class="ud-main-btn ud-link-btn">
-                                        了解更多 <i class="lni lni-arrow-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="ud-hero-buttons">
-
-                                <li>
-                                    <a href="/Download/genshin Impact DMG Visualizer 1.0.apk" rel="nofollow noopener"
-                                        target="_blank" class="ud-main-btn ud-white-btn"><i
-                                            class="lni lni-android-original"></i>
-                                        安卓版(点击下载)
-                                    </a>
-                                </li>
-
-                            </ul>
-                            <ul class="ud-hero-buttons">
-
-                                <li>
-                                    <a href="/Download/genshinimpactdmgvisualizer1.0.zip" rel="nofollow noopener"
-                                        target="_blank" class="ud-main-btn ud-white-btn"><i class="lni lni-windows"></i>
-                                        Windows版(点击下载)
-                                    </a>
-                                </li>
-
-                            </ul>
                         </div>
 
-                        <div class="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
-                            <img src="assets/images/hero/banner.jpg" alt="hero-image" />
-                            <img src="assets/images/hero/dotted-shape.svg" alt="shape" class="shape shape-1" />
-                            <img src="assets/images/hero/dotted-shape.svg" alt="shape" class="shape shape-2" />
-                        </div>
+                        <p class="ud-hero-desc mt-3">
+                            面板打开方式
+                        </p>
+
+
+                        <ul class="ud-hero-buttons">
+                            <li>
+                                <a href="https://genshin.yunlu18.net/#/" rel="nofollow noopener" target="_blank"
+                                    class="ud-main-btn ud-white-btn"><i class="lni lni-chrome"></i>
+                                    Web版国际
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://genshincn.kclu.net/#/" rel="nofollow noopener" target="_blank"
+                                    class="ud-main-btn ud-white-btn"><i class="lni lni-chrome"></i>
+                                    Web版中国
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <ul class="ud-hero-buttons">
+
+                            <li>
+                                <a href="/Download/genshin Impact DMG Visualizer 1.0.apk" rel="nofollow noopener"
+                                    target="_blank" class="ud-main-btn ud-white-btn"><i
+                                        class="lni lni-android-original"></i>
+                                    安卓版(点击下载)
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="ud-hero-buttons">
+
+                            <li>
+                                <a href="/Download/genshinimpactdmgvisualizer1.0.zip" rel="nofollow noopener"
+                                    target="_blank" class="ud-main-btn ud-white-btn"><i class="lni lni-windows"></i>
+                                    Windows版(点击下载)
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
+                        <img src="assets/images/hero/banner.jpg" alt="hero-image" />
+                        <img src="assets/images/hero/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                        <img src="assets/images/hero/dotted-shape.svg" alt="shape" class="shape shape-2" />
                     </div>
                 </div>
             </div>
+        </div>
     </section>
     <!-- ====== Hero End ====== -->
 
