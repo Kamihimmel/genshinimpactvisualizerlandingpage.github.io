@@ -16,16 +16,16 @@
     gtag('config', 'G-PZ6YBMPS54');
   </script>
 
-<script>
+  <script>
 
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const id = urlParams.get('id')
-  console.log(id);
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id')
+    console.log(id);
 
-  async function getBuild() {
+    async function getBuild() {
       let response = await fetch(
-          "https://strapi.kchlu.com/api/dbuilds/" + id
+        "https://strapi.kchlu.com/api/dbuilds/" + id
       );
       let data = await response.json();
 
@@ -38,20 +38,20 @@
       targetDiv.innerHTML = data['data']['attributes']['buildinfo'];
 
       return data;
-  }
-  getBuild().then(data => console.log(data));
+    }
+    getBuild().then(data => console.log(data));
 
-  function copyBuildButton() {
+    function copyBuildButton() {
       var targetInput = document.getElementById('buildinfo');
       targetInput.select();
       // 执行复制
       document.execCommand('copy', true);
       alert("クリップボードにコピーしました")
 
-  }
+    }
 
 
-</script>
+  </script>
 
 
   <title>原神ビジュアルダメージ計算ツール</title>
@@ -86,9 +86,9 @@
             <div class="navbar-collapse">
               <ul id="nav" class="navbar-nav">
                 <li class="nav-item">
-                    <a href="index.html">トップへ戻る</a>
+                  <a href="index.html">トップへ戻る</a>
                 </li>
-            </ul>
+              </ul>
 
 
             </div>
@@ -127,32 +127,31 @@
 
             <div class="col-xl-12 col-lg-12">
               <div class="ud-contact-form-wrapper wow fadeInUp" data-wow-delay=".2s">
-                  <h3 class="ud-contact-form-title">キャラクターパネル</h3>
-                  <form class="ud-contact-form">
-                      <div class="ud-form-group d-flex justify-content-center">
+                <h3 class="ud-contact-form-title">キャラクターパネル</h3>
+                <form class="ud-contact-form">
+                  <div class="ud-form-group d-flex justify-content-center">
 
-                          <img id="charactericon" src="/assets/images/charactericon/ayaka.png"
-                              alt="charactericon" width="150">
+                    <img id="charactericon" src="/assets/images/charactericon/ayaka.png" alt="charactericon" width="150"
+                      height="150">
 
-                      </div>
+                  </div>
 
-                      <div class="ud-form-group">
-                          <label for="buildinfo">パネルのソースコード</label>
-                          <textarea name="message" id="buildinfo" rows="2"></textarea>
-                      </div>
-                      <div class="ud-form-group mb-0 d-flex justify-content-center">
-                          <button type="button" id="copybuild" class="ud-main-btn"
-                              onclick="copyBuildButton()">
-                              コピー
-                          </button>
-                      </div>
-                  </form>
+                  <div class="ud-form-group">
+                    <label for="buildinfo">パネルのソースコード</label>
+                    <textarea name="message" id="buildinfo" rows="2"></textarea>
+                  </div>
+                  <div class="ud-form-group mb-0 d-flex justify-content-center">
+                    <button type="button" id="copybuild" class="ud-main-btn" onclick="copyBuildButton()">
+                      コピー
+                    </button>
+                  </div>
+                </form>
               </div>
-          </div>
+            </div>
 
-          <p class="ud-hero-desc mt-3">
+            <p class="ud-hero-desc mt-3">
               パネルの開き方
-          </p>
+            </p>
 
 
             <ul class="ud-hero-buttons">
@@ -163,7 +162,7 @@
                 </a>
               </li>
 
-              
+
             </ul>
             <ul class="ud-hero-buttons">
 
@@ -185,7 +184,7 @@
 
             </ul>
           </div>
-          
+
           <div class="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
             <img src="../assets/images/hero/bannerjp.jpg" alt="hero-image" />
             <img src="../assets/images/hero/dotted-shape.svg" alt="shape" class="shape shape-1" />
