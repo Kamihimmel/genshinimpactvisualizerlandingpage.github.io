@@ -14,6 +14,30 @@
 
     gtag('config', 'G-PZ6YBMPS54');
   </script>
+
+  <script>
+
+
+
+    async function getVer() {
+      let response = await fetch(
+        "https://strapi.kchlu.com/api/version/"
+      );
+      let data = await response.json();
+
+      console.log(data)
+
+      targetDiv = document.getElementById('version');
+      targetDiv.innerHTML = "Ver" + data['data']['attributes']['version'];
+
+      return data;
+    }
+    getVer().then(data => console.log(data));
+
+
+
+
+  </script>
   <title>原神伤害可视化计算器</title>
 
 
@@ -131,6 +155,17 @@
             <h1 class="ud-hero-title">
               原神伤害可视化计算器
             </h1>
+
+
+            <ul class="ud-hero-buttons">
+              <a id="version" class="
+            ud-main-btn  ud-white-btn
+          " style="height: 35px;padding: 5px 15px;background: rgba(255, 255, 255, 0.2);color: white;">
+                Ver1.1
+              </a>
+
+            </ul>
+
             <p class="ud-hero-desc">
               原神伤害可视化计算器是一款旨在将原神游戏中产生的伤害数值和伤害buff进行可视化的工具。
             </p>
