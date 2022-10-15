@@ -36,7 +36,9 @@
     getVer().then(data => console.log(data));
 
 
-
+    function showNav() {
+      document.getElementsByClassName("navigation")[0].classList.toggle("active");
+    }
 
   </script>
   <title>原神伤害可视化计算器</title>
@@ -63,6 +65,7 @@
   <link rel="stylesheet" href="assets/css/animate.css" />
   <link rel="stylesheet" href="assets/css/lineicons.css" />
   <link rel="stylesheet" href="assets/css/ud-styles.css" />
+  <link rel="stylesheet" href="assets/css/workshop.css" />
 </head>
 
 <body>
@@ -158,7 +161,28 @@
     </div>
   </header>
   <!-- ====== Header End ====== -->
-
+  <div class="navigation">
+    <div class="ham-btn" onclick="showNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <img src="assets/images/alicecube.png" alt="bilibili" width="240px" />
+    <div class="links">
+      <div class="link">
+        <a href="#">About Alice Workshop</a>
+      </div>
+      <div class="link">
+        <a href="#">Our members</a>
+      </div>
+      <div class="link">
+        <a href="#">Our projects</a>
+      </div>
+      <div class="nrow">
+        <div class="ncard"><img src="/android-chrome-192x192.png" width="60px" alt="Logo" /><br>原神伤害可视化计算器</div>
+      </div>
+    </div>
+  </div>
   <!-- ====== Hero Start ====== -->
   <section class="ud-hero" id="home">
     <div class="container">
@@ -168,6 +192,18 @@
             <h1 class="ud-hero-title">
               原神伤害可视化计算器
             </h1>
+
+            <ul class="ud-hero-buttons">
+              <a id="workshop" class="
+            ud-main-btn  ud-white-btn
+          " style="height: 155px;padding: 5px 5px;background: rgba(255, 255, 255, 1);color: black;"
+                onclick="showNav()">
+                <img src="assets/images/alicecube.png" alt="bilibili" width="120px" /><br>
+
+                <span>By 爱丽丝工坊</span>
+              </a>
+
+            </ul>
 
 
             <ul class="ud-hero-buttons">

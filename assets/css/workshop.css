@@ -1,0 +1,108 @@
+.navigation {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    z-index: 200;
+    clip-path: circle(5px at 50% 30%);
+    transition: all 500ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation.active {
+    clip-path: circle(75%);
+    background: rgba(255, 255, 255, 1);
+}
+
+.ncard {
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 130px;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(230, 97, 8, 0.2);
+    /* this adds the "card" effect */
+    padding: 5px;
+    text-align: center;
+    color: white;
+    background-color: #f7550a;
+}
+
+.navigation .links a {
+    position: relative;
+    display: inline-block;
+    margin: 20px 0px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.navigation .links a:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
+    height: 2px;
+    width: 0%;
+    background: tomato;
+    transition: all 300ms ease-in-out;
+}
+
+.navigation .links a:hover:after {
+    width: 100%;
+}
+
+.ham-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    background: #111;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.ham-btn span {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 2px;
+    background: #f5f5f5;
+    transition: all 200ms ease-in-out;
+}
+
+.ham-btn span:nth-child(1) {
+    top: 30%;
+}
+
+.ham-btn sp.navigation.active an:nth-child(2) {
+    top: 50%;
+}
+
+.ham-btn span:nth-child(3) {
+    top: 70%;
+}
+
+.ham-btn span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-btn span:nth-child(2) {
+    display: none;
+}
+
+.ham-btn span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
