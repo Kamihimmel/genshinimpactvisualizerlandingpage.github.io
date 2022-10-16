@@ -6,16 +6,44 @@
     height: 100%;
     background: rgba(255, 255, 255, 0);
     z-index: 200;
-    clip-path: circle(5px at 50% 30%);
+    clip-path: circle(0px at 50% 30%);
     transition: all 500ms ease-in-out;
     display: flex;
     justify-content: center;
-    align-items: center;
+
 }
 
 .navigation.active {
     clip-path: circle(75%);
     background: rgba(255, 255, 255, 1);
+}
+
+.navigation2 {
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    background: rgba(222, 97, 13, 0);
+    z-index: 300;
+    clip-path: circle(0px at 50% 0%);
+    transition: all 500ms ease-in-out;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.navigation2.active {
+    clip-path: circle(75%);
+    background: rgb(240, 124, 28);
+}
+
+.nrow {
+    z-index: 900;
+
+    position: fixed;
 }
 
 .ncard {
@@ -29,7 +57,7 @@
     padding: 5px;
     text-align: center;
     color: white;
-    background-color: #f7550a;
+    background-color: rgb(240, 124, 28);
 }
 
 .navigation .links a {

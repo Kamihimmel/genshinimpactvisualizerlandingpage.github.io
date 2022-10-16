@@ -39,6 +39,9 @@
     function showNav() {
       document.getElementsByClassName("navigation")[0].classList.toggle("active");
     }
+    function showNav2() {
+      document.getElementsByClassName("navigation2")[0].classList.toggle("active");
+    }
 
   </script>
   <title>原神伤害可视化计算器</title>
@@ -167,20 +170,28 @@
       <span></span>
       <span></span>
     </div>
-    <img src="assets/images/alicecube.png" alt="bilibili" width="240px" />
     <div class="links">
+      <div style="text-align: center;"><img src="assets/images/alicecube.png" alt="bilibili" width="240px" /></div>
       <div class="link">
-        <a href="#">About Alice Workshop</a>
+        <a href="#">Alice Workshop</a>
       </div>
-      <div class="link">
-        <a href="#">Our members</a>
-      </div>
+      <span style="font-family: cursive;color:darkorange">A delight group of digital creators</span>
+
       <div class="link">
         <a href="#">Our projects</a>
       </div>
-      <div class="nrow">
-        <div class="ncard"><img src="/android-chrome-192x192.png" width="60px" alt="Logo" /><br>原神伤害可视化计算器</div>
+      <div class="navigation2">
+        <div style="width: 100%;padding:10px;height: 30%;text-align: center;color:white">
+          原神伤害可视化计算器是一款旨在将原神游戏中产生的伤害数值和伤害buff进行可视化的工具。
+        </div>
+        <div style="width: 100%;height: 20%;text-align: center;color:white">CN Homepage</div>
+        <div style="width: 100%;height: 20%;text-align: center;color:white">EN Homepage</div>
       </div>
+      <div class="nrow">
+        <div class="ncard" onclick="showNav2()"><img src="/android-chrome-192x192.png" width="60px"
+            alt="Logo" /><br>原神伤害可视化计算器</div>
+      </div>
+
     </div>
   </div>
   <!-- ====== Hero Start ====== -->
