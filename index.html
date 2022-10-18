@@ -35,14 +35,14 @@
     }
     getVer().then(data => console.log(data));
 
-
+    //ALice workshop JS start
     function showNav() {
       document.getElementsByClassName("navigation")[0].classList.toggle("active");
     }
     function showNav2() {
       document.getElementsByClassName("navigation2")[0].classList.toggle("active");
     }
-
+//ALice workshop JS end
   </script>
   <title>原神伤害可视化计算器</title>
 
@@ -68,7 +68,8 @@
   <link rel="stylesheet" href="assets/css/animate.css" />
   <link rel="stylesheet" href="assets/css/lineicons.css" />
   <link rel="stylesheet" href="assets/css/ud-styles.css" />
-  <link rel="stylesheet" href="assets/css/workshop.css" />
+  <!-- ===== Alice workshop files ===== -->
+  <link rel="stylesheet" href="/workshop/workshop.css" />
 </head>
 
 <body>
@@ -164,6 +165,7 @@
     </div>
   </header>
   <!-- ====== Header End ====== -->
+  <!-- ======Alice workshop popup start ====== -->
   <div class="navigation">
     <div class="ham-btn" onclick="showNav()">
       <span></span>
@@ -171,7 +173,7 @@
       <span></span>
     </div>
     <div class="links">
-      <div style="text-align: center;"><img src="assets/images/alicecube.png" alt="bilibili" width="240px" /></div>
+      <div style="text-align: center;"><img src="/workshop/alicecube.png" alt="bilibili" width="240px" /></div>
       <div class="link">
         <a href="#">Alice Workshop</a>
       </div>
@@ -181,19 +183,35 @@
         <a href="#">Our projects</a>
       </div>
       <div class="navigation2">
-        <div style="width: 100%;padding:10px;height: 30%;text-align: center;color:white">
+        <div class="ham-btn" style="position: absolute;background: none;" onclick="showNav2()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <img src="/workshop/gidv.png" width="100px" alt="Logo" />
+
+        <div style="width: 100%;padding:10px;text-align: center;color:white;font-weight: bold;">
           原神伤害可视化计算器是一款旨在将原神游戏中产生的伤害数值和伤害buff进行可视化的工具。
         </div>
-        <div style="width: 100%;height: 20%;text-align: center;color:white">CN Homepage</div>
-        <div style="width: 100%;height: 20%;text-align: center;color:white">EN Homepage</div>
+        <a href="https://genshincalc.kchlu.com/" rel="nofollow noopener" target="_blank"
+          style="all:initial;text-decoration: none;width: 95%;max-width:1000px;font-weight: bold;">
+          <div class="nbtn" style="text-align: center;color:white;padding:10px;margin: 10px;border: 1px solid  #fff;">
+            大陆版首页</div>
+        </a>
+        <a href="https://genshincalc.yunlu18.net/" rel="nofollow noopener" target="_blank"
+          style="all:initial;text-decoration: none;width: 95%;max-width:1000px;font-weight: bold;" class="nbtn">
+          <div class="nbtn" style="text-align: center;color:white;padding:10px;margin: 10px;border: 1px solid  #fff;">
+            国际版首页</div>
+        </a>
       </div>
       <div class="nrow">
-        <div class="ncard" onclick="showNav2()"><img src="/android-chrome-192x192.png" width="60px"
-            alt="Logo" /><br>原神伤害可视化计算器</div>
+        <div class="ncard" onclick="showNav2()"><img src="/workshop/gidv.png" width="60px" alt="Logo" /><br>原神伤害可视化计算器
+        </div>
       </div>
 
     </div>
   </div>
+  <!-- ======Alice workshop popup end ====== -->
   <!-- ====== Hero Start ====== -->
   <section class="ud-hero" id="home">
     <div class="container">
@@ -209,7 +227,7 @@
             ud-main-btn  ud-white-btn
           " style="height: 155px;padding: 5px 5px;background: rgba(255, 255, 255, 1);color: black;"
                 onclick="showNav()">
-                <img src="assets/images/alicecube.png" alt="bilibili" width="120px" /><br>
+                <img src="/workshop/alicecube.png" alt="bilibili" width="120px" /><br>
 
                 <span>By 爱丽丝工坊</span>
               </a>
