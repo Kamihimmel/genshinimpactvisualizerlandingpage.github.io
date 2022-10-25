@@ -43,6 +43,13 @@
       document.getElementsByClassName("navigation2")[0].classList.toggle("active");
     }
 
+    function showNav3() {
+      document.getElementsByClassName("navigation2")[1].classList.toggle("active");
+    }
+    function showNav4() {
+      document.getElementsByClassName("navigation2")[2].classList.toggle("active");
+    }
+
 
   </script>
   <title>原神ビジュアルダメージ計算ツール</title>
@@ -173,9 +180,9 @@
     <div class="links">
       <div style="text-align: center;"><img src="/workshop/alicecube.png" alt="bilibili" width="240px" /></div>
       <div class="link">
-        <a href="#">アリスワークショップ</a>
+        <a href="#">Alice Workshop</a>
       </div>
-      <span style="font-family: cursive;color:darkorange">デジタル作品で人々を喜ばせるクリエーターたちのグループ</span>
+      <span style="font-family: cursive;color:darkorange">A delight group of digital creators</span>
 
       <div class="link">
         <a href="#">作品一覧</a>
@@ -191,19 +198,58 @@
         <div style="width: 100%;padding:10px;text-align: center;color:white;font-weight: bold;">
           原神ビジュアルダメージ計算ツールはゲーム原神においてキャラクターが引き起こしたダメージ及びバフをビジュアル化するツールです。
         </div>
-        <a href="https://genshincalc.kchlu.com/" rel="nofollow noopener" target="_blank"
-          style="all:initial;text-decoration: none;width: 95%;max-width:1000px;font-weight: bold;">
-          <div class="nbtn" style="text-align: center;color:white;padding:10px;margin: 10px;border: 1px solid  #fff;">
-            中国版トップ</div>
-        </a>
-        <a href="https://genshincalc.yunlu18.net/" rel="nofollow noopener" target="_blank"
+
+        <a href="https://genshincalc.yunlu18.net/jp/index.html" rel="nofollow noopener" target="_blank"
           style="all:initial;text-decoration: none;width: 95%;max-width:1000px;font-weight: bold;" class="nbtn">
           <div class="nbtn" style="text-align: center;color:white;padding:10px;margin: 10px;border: 1px solid  #fff;">
-            国際版トップ</div>
+            ホームページ</div>
+        </a>
+      </div>
+      <div class="navigation2">
+        <div class="ham-btn" style="position: absolute;background: none;" onclick="showNav3()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <img src="/workshop/atlas.png" width="100px" alt="Logo" />
+
+        <div style="width: 100%;padding:10px;text-align: center;color:white;font-weight: bold;">
+          Atlas for Genshin Impact is a map tool app help you lookup materials and mark the point.(macOS Only)
+        </div>
+
+        <a href="https://apps.apple.com/app/atlas-for-genshin-impact/id1644679798" rel="nofollow noopener"
+          target="_blank" style="all:initial;text-decoration: none;width: 95%;max-width:1000px;font-weight: bold;"
+          class="nbtn">
+          <div class="nbtn" style="text-align: center;color:white;padding:10px;margin: 10px;border: 1px solid  #fff;">
+            Homepage</div>
+        </a>
+      </div>
+      <div class="navigation2">
+        <div class="ham-btn" style="position: absolute;background: none;" onclick="showNav4()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <img src="/workshop/ophelper.png" width="100px" alt="Logo" />
+
+        <div style="width: 100%;padding:10px;text-align: center;color:white;font-weight: bold;">
+          リアルタイム原神ウィジェット
+        </div>
+
+        <a href="https://apps.apple.com/app/id1635319193" rel="nofollow noopener" target="_blank"
+          style="all:initial;text-decoration: none;width: 95%;max-width:1000px;font-weight: bold;" class="nbtn">
+          <div class="nbtn" style="text-align: center;color:white;padding:10px;margin: 10px;border: 1px solid  #fff;">
+            ホームページ</div>
         </a>
       </div>
       <div class="nrow">
-        <div class="ncard" onclick="showNav2()"><img src="/workshop/gidv.png" width="60px" alt="Logo" /><br><span style="font-size: 14px">原神ビジュアルダメージ計算ツール</span>
+        <div class="ncard" onclick="showNav2()" style="font-size: 15px;"><img src="/workshop/gidv.png" width="60px"
+            alt="Logo" /><br>原神ビジュアルダメージ計算ツール
+        </div>
+        <div class="ncard" onclick="showNav3()"><img src="/workshop/atlas.png" width="60px" alt="Logo" /><br>Atlas
+        </div>
+        <div class="ncard" onclick="showNav4()" style="font-size: 15px;"><img src="/workshop/ophelper.png" width="60px"
+            alt="Logo" /><br>原神ピザ助手
         </div>
       </div>
 
@@ -225,7 +271,7 @@
                 onclick="showNav()">
                 <img src="/workshop/alicecube.png" alt="bilibili" width="120px" /><br>
 
-                <span>By アリスワークショップ</span>
+                <span>By アリス工房</span>
               </a>
 
             </ul>
