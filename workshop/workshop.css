@@ -45,7 +45,10 @@
 }
 
 .nrow {
+    display: flex;
+    flex-direction: row;
     z-index: 200;
+    gap: 10px;
 
     position: fixed;
 }
@@ -62,6 +65,7 @@
     text-align: center;
     color: white;
     background-color: rgb(240, 124, 28);
+
 }
 
 .navigation .links a {
